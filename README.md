@@ -1,4 +1,19 @@
-# webscrapping
+## Code running instruction 
+
+### Initial_code.py
+Initial_code.py contain the codes to download the results pages as .html file. Downloading the pages prevent being blocked by Tripadvisor though Tripadvisor doesn't seem to have any restriction on webscrapping. 
+
+### Run_this_second.py
+1. Run_this_second.py contain the codes to establish the connection to the Mongo database as well as create a new collection to store the data. In this stage, it will only scrape the info of the first search page downloaded in the previous stage. The purpose of downloading only the first page is that the first page contain the skeleton for the full database with no duplications of hotels. 
+2. It will then add the info to the database created and create unique index on the hotel url to prevent the cases that hotel might have exactly the same names. Also, unique indexing on hotel url will also prevent duplications when updating the database.  
+4. The codes used for the second stage will only scrape data from TripAdvisor with all the information available on the website like Address, Phone, Number of Reviews and Accessibility Scores. 
+
+### Run_this_last.py 
+1. At this stage, the code will update the database with the rest of pages we downloaded in the first stage (stage 2 only downloads the first page).
+2. It will then update the database with prices info from Xotelo - an API that draw data directly from Tripadvisor as well as Agoda.com. 
+
+
+
 
 ## Background
 
@@ -31,6 +46,10 @@ To be specific, the database can be used in Price-Demand analysis in hotel indus
 In terms of the user’s perspective, any person can use it as a source of price information to pick on where to book the hotel based on their price’s preference, location’s preference. This database would allow them to easily compare between hotels by looking at specific attributes that they desire. 
            NoSQL databases are generally more flexible than SQL databases. And MongoDB has the advantage of high performance, high availability, and automatic scaling. For instance, MongoDB does not require a primary key so any null values in hotel information can be handled, even the names or URLs; the address information is a combination of string, special characters, and integers, which can also be handled by the flexible datatype of MongoDB. And when the scale of information retrieved increases, MongoDB can automatically scale and even migrate into a distributed database, using the map-reduce procedure to retrieve data.
            
-## Summary and Conclusion
+## Summary 
 In this project, we developed an extendable program for scrapping hotel prices, locations, URLs, and other information from leading OTA websites in Python. We built the data pipeline of scraping and storing the retrieved data to NoSQL database MongoDB. 
 The program can be utilized by companies in the OTA industry to track competitors’ pricing strategies, analyze hotel prices for different cities, etc., to help the companies to design their own pricing strategies.
+
+
+
+
