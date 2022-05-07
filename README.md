@@ -13,7 +13,7 @@ Initial_code.py contain the codes to download the results pages as .html file. D
 2. It will then update the database with prices info from Xotelo - an API that draw data directly from Tripadvisor as well as Agoda.com. 
 
 
-![alt text](http://url/to/img.png)
+![alt text](https://github.com/tramnle/Webscrapping-TripAdvisor-MongoDB-/blob/main/MongoDB%20Tripadvisor%20Database.png?raw=true)
 
 
 
